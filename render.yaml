@@ -17,13 +17,12 @@ services:
       - key: HISTORICAL_CACHE_TTL_HOURS
         value: "168"
       - key: SECRET_KEY
-        generateSecret: true
+        generateValue: true
 
   # ─── React + Vite Frontend Static Site ───────────────────────────────────────
   - type: web
     name: adaptfit-web
     runtime: static
-    region: oregon
     plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
