@@ -1,0 +1,40 @@
+services:
+  # ─── Flask REST Backend Service ──────────────────────────────────────────────
+  - type: web
+    name: adaptfit-api
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: HISTORICAL_CACHE_TTL_HOURS
+        value: "168"
+      - key: SECRET_KEY
+        generateSecret: true
+
+  # ─── React + Vite Frontend Static Site ───────────────────────────────────────
+  - type: web
+    name: adaptfit-web
+    runtime: static
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: adaptfit-api
+          property: host
+

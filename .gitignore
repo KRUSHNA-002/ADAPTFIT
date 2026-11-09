@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+backend/venv/
+backend/.venv/
+.venv/
+venv/
+
+# Production build outputs
+dist/
+build/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# SQLite Databases & Local Instance Storage
+backend/instance/
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs & Runtime
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and Editor Artefacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+

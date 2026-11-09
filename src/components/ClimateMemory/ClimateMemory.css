@@ -1,0 +1,267 @@
+.climate-memory-section {
+  position: relative;
+  z-index: 10;
+  padding: 6rem 0;
+  background: #020e17;
+  border-top: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+/* Indicators Row */
+.indicators-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.indicator-card {
+  background: rgba(3, 19, 27, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.indicator-label {
+  font-size: 0.75rem;
+  color: var(--slate-300);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.indicator-metric-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.indicator-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: #ffffff;
+}
+
+.indicator-delta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--green-mint);
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+/* Timeline Layout */
+.memory-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.timeline-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.timeline-step-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(4, 21, 29, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  transition: all var(--transition-fast);
+  color: var(--slate-200);
+}
+
+.timeline-step-btn:hover {
+  background: rgba(4, 21, 29, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+}
+
+.timeline-step-btn.active {
+  background: rgba(6, 32, 28, 0.95);
+  border-color: var(--green-mint);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+  color: #ffffff;
+}
+
+.step-year-badge {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--green-mint);
+  min-width: 54px;
+}
+
+.step-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-era {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sky-blue);
+  font-weight: 700;
+}
+
+.step-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 0.15rem;
+}
+
+.step-chevron {
+  color: var(--slate-400);
+  transition: transform var(--transition-fast);
+}
+
+.timeline-step-btn.active .step-chevron {
+  color: var(--green-mint);
+  transform: translateX(3px);
+}
+
+/* Milestone Detail Card */
+.milestone-detail-card {
+  background: rgba(4, 21, 29, 0.88);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.detail-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sky-frost);
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  align-self: flex-start;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sky-blue);
+}
+
+.milestone-headline {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.year-accent {
+  color: var(--green-mint);
+}
+
+.milestone-desc {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--slate-200);
+  margin-bottom: 1.75rem;
+}
+
+/* Triad */
+.milestone-telemetry-triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: rgba(2, 14, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.triad-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.triad-label {
+  font-size: 0.68rem;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.triad-val {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.triad-val.green {
+  color: var(--green-mint);
+}
+
+.triad-val.sky {
+  color: var(--sky-blue);
+}
+
+.adaptation-lesson-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 0.86rem;
+  color: var(--slate-200);
+  line-height: 1.5;
+}
+
+.lesson-icon {
+  color: var(--green-mint);
+  min-width: 18px;
+  margin-top: 2px;
+}
+
+@media (max-width: 992px) {
+  .indicators-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .memory-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .indicators-row {
+    grid-template-columns: 1fr;
+  }
+  .milestone-telemetry-triad {
+    grid-template-columns: 1fr;
+  }
+}
+
